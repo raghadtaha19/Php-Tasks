@@ -1,11 +1,23 @@
 <?php
-$year=2016;
-if($year %4 == 0)
-  echo" $year This year is  a leap year";
-else
-  echo"$year This year is not a leap year ";
 
-echo"<br><br>";
+$year = 2005;
+function isLeapYear($year) {
+    if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0)) {
+        return $year  ;
+    } else {
+      
+    }
+}
+
+if (isLeapYear($year)) {
+    echo "$year is a leap year.";
+} else {
+    echo "$year is not a leap year.";
+}
+
+
+
+ echo"<br><br>";
 
 $temp="20 degree";
 if($temp < 20)
@@ -75,30 +87,37 @@ if($val >0){
 }
 else echo "negative";
 
-echo"<br><br>";
-$operator = "+";
-$x1=2;
-$x2=3;
+ echo"<br><br>";
+
+$operator = "/";
+$x1 = 2;
+$x2 = 3;
 $result;
 
-switch(true){
-  case "Addition":
-  $result= $x1+$x2;
-    break;
-  case "Subtraction":
-    $result= $x1-$x2;
-    break;
-  case	"Multiplication":
-    $result=$x1*$x2;
-    break;
-    
-   case "Division":
-    if($x2!=0){
-      $result= $x1/$x2;
-      break;
-    }
-    else echo "cant divide by zero";
-   
+switch ($operator) {
+    case "+":
+        $result = $x1 + $x2;
+        echo $result;
+        break;
+    case "-":
+        $result = $x1 - $x2;
+        echo $result;
+        break;
+    case "*":
+        $result = $x1 * $x2;
+        echo $result;
+        break;
+    case "/":
+        if ($x2 != 0) {
+            $result = $x1 / $x2;
+            echo $result;
+        } else {
+            echo "Can't divide by zero";
+        }
+        break;
+    default:
+        echo "Invalid operator";
+        break;
 }
 
 
